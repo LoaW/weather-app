@@ -1,0 +1,31 @@
+body {
+  height: 100vh;
+  background-size: cover;
+  background-image: url("/assets/img/home.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+header #submit {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  border-radius: 50%;
+  font-size: 24px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+header #search {
+  border-radius: 8px;
+  border-style: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #1e1e1e;
+  font-size: 24px;
+}/*# sourceMappingURL=style.css.map */
