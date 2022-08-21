@@ -1,5 +1,5 @@
-$col_font: #ffffff;
-$col_back: #1e1e1e;
+$col_font: #4d4d4d;
+$col_back: #292929;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *{
@@ -12,11 +12,11 @@ body{
     font-family: 'Montserrat', sans-serif;
     background-size: cover;
     background-image: url("/assets/img/home.jpg"); 
-    background-repeat: no-repeat;
     background-position: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: $col_font
 }
 
 header{
@@ -25,6 +25,10 @@ header{
 }
 
 main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
     .top{
         display: flex;
         justify-content: space-between;
@@ -32,10 +36,12 @@ main{
             .city{
                 color: $col_font;
                 font-size: 36px;
+                margin-left: 5px;
             }
             .temp{
                 color: $col_font;
                 font-size: 96px;
+                margin-left: 5px;
             }
         }
         .top--right{
@@ -49,17 +55,50 @@ main{
             }
         }
     }
+    .bot{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .bot--left{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-left: 5px;
+            .humidity{
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+            .wind{
+                font-size: 18px;
+            }
+        }
+        .bot--right{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            .weaIcon{
+                width: 100px;
+            }
+            .description{
+                margin-bottom: 20px;
+            }
+        }
+    }
 }
 
 footer{
     display: flex;
     justify-content: center;
+    align-items: center;
     #search{
         border-style: none;
-        background-color: rgba($color: $col_back, $alpha: 0.3);
+        background-color: rgba($color: $col_back, $alpha: 0.8);
         color: $col_font;
         font-size: 24px;
         text-align: center;
-        margin-bottom: 20px;
+        margin: 10px;
+        color: #d3d3d3;
     }
 }

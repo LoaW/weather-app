@@ -9,11 +9,11 @@ body {
   font-family: "Montserrat", sans-serif;
   background-size: cover;
   background-image: url("/assets/img/home.jpg");
-  background-repeat: no-repeat;
   background-position: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: #4d4d4d;
 }
 
 header {
@@ -21,17 +21,25 @@ header {
   justify-content: flex-end;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
 main .top {
   display: flex;
   justify-content: space-between;
 }
 main .top .top--left .city {
-  color: #ffffff;
+  color: #4d4d4d;
   font-size: 36px;
+  margin-left: 5px;
 }
 main .top .top--left .temp {
-  color: #ffffff;
+  color: #4d4d4d;
   font-size: 96px;
+  margin-left: 5px;
 }
 main .top .top--right {
   display: flex;
@@ -39,20 +47,53 @@ main .top .top--right {
 }
 main .top .top--right .weather {
   transform: rotate(-90deg);
-  color: #ffffff;
+  color: #4d4d4d;
   font-size: 36px;
   padding-top: 80%;
+}
+main .bot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .bot .bot--left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 5px;
+}
+main .bot .bot--left .humidity {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+main .bot .bot--left .wind {
+  font-size: 18px;
+}
+main .bot .bot--right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+main .bot .bot--right .weaIcon {
+  width: 100px;
+}
+main .bot .bot--right .description {
+  margin-bottom: 20px;
 }
 
 footer {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 footer #search {
   border-style: none;
-  background-color: rgba(30, 30, 30, 0.3);
-  color: #ffffff;
+  background-color: rgba(41, 41, 41, 0.8);
+  color: #4d4d4d;
   font-size: 24px;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 10px;
+  color: #d3d3d3;
 }/*# sourceMappingURL=style.css.map */
