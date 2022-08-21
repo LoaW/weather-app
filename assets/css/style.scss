@@ -1,35 +1,65 @@
-$col_font: #1e1e1e;
-$col_back: #ffffff;
+$col_font: #ffffff;
+$col_back: #1e1e1e;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+*{
+    padding: 0px;
+    margin: 0px;
+}
 
 body{
     height: 100vh;
+    font-family: 'Montserrat', sans-serif;
     background-size: cover;
     background-image: url("/assets/img/home.jpg"); 
     background-repeat: no-repeat;
     background-position: 50%;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 header{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5%;
-    #submit{
-        width: 50px;
-        height: 50px;
-        border-style: none;
-        border-radius: 50%;
-        font-size: 24px;
-        margin-bottom: 10px;
-        background-color: rgba($color: $col_back, $alpha: 0.5);
+    justify-content: flex-end;
+}
+
+main{
+    .top{
+        display: flex;
+        justify-content: space-between;
+        .top--left{
+            .city{
+                color: $col_font;
+                font-size: 36px;
+            }
+            .temp{
+                color: $col_font;
+                font-size: 96px;
+            }
+        }
+        .top--right{
+            display: flex;
+            justify-content: center;
+            .weather{
+            transform: rotate(-90deg);
+            color: $col_font;
+            font-size: 36px;
+            padding-top: 80%;
+            }
+        }
     }
+}
+
+footer{
+    display: flex;
+    justify-content: center;
     #search{
-        border-radius: 8px;
         border-style: none;
-        background-color: rgba($color: $col_back, $alpha: 0.5);
+        background-color: rgba($color: $col_back, $alpha: 0.3);
         color: $col_font;
         font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
     }
 }
