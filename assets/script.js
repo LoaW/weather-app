@@ -11,12 +11,15 @@ let htmlCity = document.createElement("h3")
 let htmlTemp = document.createElement("div")
 let htmlWeather = document.createElement("div")
 let htmlBotLeft = document.querySelector(".bot--left")
+let htmlBotMiddle = document.querySelector(".bot--middle")
 let htmlBotRight = document.querySelector(".bot--right")
+let htmlHumidityIcon = document.createElement("img")
 let htmlHumidity = document.createElement("div")
 let htmlWind = document.createElement("div")
+let htmlWindIcon = document.createElement("img")
 let htmlWeatherIcon = document.createElement("img")
 let htmlDescription = document.createElement("div")
-
+let htmlSearch = document.querySelector("input")
 
 let latitude
 let longitude
@@ -29,6 +32,7 @@ let humidity
 let wind
 let weaIcon
 let description
+let colorCheck
 
 inputField.addEventListener("keyup", function(event){
     if (event.key === "Enter") {
@@ -55,7 +59,6 @@ async function getWeather(){
     description = weaObject.list[0].weather[0].description
     humidity = weaObject.list[0].main.humidity
     wind = weaObject.list[0].wind.speed
-    console.log(weaIcon)
     getImage()
 }
 
@@ -75,32 +78,77 @@ function createElem(){
     htmlTemp.classList.add("temp")
     htmlWeather.innerHTML = weather
     htmlWeather.classList.add("weather")
-    console.log(humidity)
-    htmlHumidity.innerHTML = `Humidity : ${humidity}%`
+    htmlHumidityIcon.setAttribute("src", "./assets/img/humidity.png")
+    htmlHumidityIcon.classList.add("humidityIcon")
+    htmlHumidity.innerHTML = `${humidity}%`
     htmlHumidity.classList.add("humidity")
-    htmlWind.innerHTML = `Wind speed : ${wind}m/s`
+    htmlWindIcon.setAttribute("src", "./assets/img/storm.png")
+    htmlWindIcon.classList.add("windIcon")
+    htmlWind.innerHTML = `${wind}m/s`
     htmlWind.classList.add("wind")
     htmlWeatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${weaIcon}@2x.png`)
     htmlWeatherIcon.classList.add("weaIcon")
     htmlDescription.innerHTML = description
     htmlDescription.classList.add("description")
+    htmlSearch.style.backgroundColor = color
+
 
     htmlTopLeft.appendChild(htmlCity)
     htmlTopLeft.appendChild(htmlTemp)
     htmlTopRight.appendChild(htmlWeather)
-    htmlBotLeft.appendChild(htmlHumidity)
+    htmlBotLeft.appendChild(htmlWindIcon)
     htmlBotLeft.appendChild(htmlWind)
-    htmlBotRight.appendChild(htmlWeatherIcon)
-    htmlBotRight.appendChild(htmlDescription)
-    
+    htmlBotMiddle.appendChild(htmlWeatherIcon)
+    htmlBotMiddle.appendChild(htmlDescription)
+    htmlBotRight.appendChild(htmlHumidityIcon)
+    htmlBotRight.appendChild(htmlHumidity)
 
     
-    document.querySelector(".top").style.backgroundColor = color
-    document.querySelector(".bot").style.backgroundColor = color
-    document.querySelector("footer").style.backgroundColor = color
+    let tryColor = `linear-gradient(0.25turn, ${hexToRGB(color, 1)}, ${hexToRGB(color, 0.8)}, ${hexToRGB(color, 1)})`
+    console.log(color)
+    console.log(hexToRGB(color,1))
+    console.log(colorCheck)
+    SwapColorFont(colorCheck)
+    
+    document.querySelector(".top").style.background = tryColor
+    document.querySelector(".bot").style.background = tryColor
+    document.querySelector("footer").style.background = tryColor
 
     document.body.style.backgroundImage = `url('${picture}')`
 
     // "linear-gradient(0.25turn, rgba(" + color + ", $alpha: 0.7), rgba(" + color + ", $alpha: 0.1), rgba(" + color + ", $alpha: 0.7)"
-    // linear-gradient(0.25turn, rgba(${color}, $alpha: 0.7), rgba(${color}, $alpha: 0.1),rgba(${color}, $alpha: 0.7));
+}
+
+function SwapColorFont(value){
+    if (value > 600) {
+        htmlCity.style.color = "#252525"
+        htmlTemp.style.color = "#252525"
+        htmlWeather.style.color = "#252525"
+        htmlHumidity.style.color = "#252525"
+        htmlWind.style.color = "#252525"
+        htmlDescription.style.color = "#252525"
+        htmlSearch.style.color = "#252525"
+    }
+    else{
+        htmlCity.style.color = "#e5e5e5"
+        htmlTemp.style.color = "#e5e5e5"
+        htmlWeather.style.color = "#e5e5e5"
+        htmlHumidity.style.color = "#e5e5e5"
+        htmlWind.style.color = "#e5e5e5"
+        htmlDescription.style.color = "#e5e5e5"
+        htmlSearch.style.color = "#e5e5e5"
+    }
+}
+
+function hexToRGB(hex, alpha) {
+    var r = parseInt(hex.slice(1, 3), 16),
+        g = parseInt(hex.slice(3, 5), 16),
+        b = parseInt(hex.slice(5, 7), 16);
+        colorCheck = r + g + b
+
+    if (alpha) {
+        return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+    } else {
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
 }

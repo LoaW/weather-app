@@ -1,4 +1,5 @@
-$col_font: #4d4d4d;
+$col_font: #e5e5e5;
+// $col_font: #252525
 $col_back: #292929;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
@@ -13,6 +14,7 @@ body{
     background-size: cover;
     background-image: url("/assets/img/home.jpg"); 
     background-position: 50%;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,61 +30,85 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    height: 95vh;
     .top{
         display: flex;
         justify-content: space-between;
+        width: 100vw;
+        overflow: hidden;
         .top--left{
             .city{
-                color: $col_font;
                 font-size: 36px;
                 margin-left: 5px;
             }
             .temp{
-                color: $col_font;
+                mix-blend-mode: normal;
                 font-size: 96px;
                 margin-left: 5px;
             }
         }
         .top--right{
-            display: flex;
-            justify-content: center;
-            .weather{
             transform: rotate(-90deg);
-            color: $col_font;
+            display: flex;
+            justify-content: flex-start;
+            .weather{
             font-size: 36px;
-            padding-top: 80%;
+            margin-top: 100%;
             }
         }
     }
     .bot{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: space-around;
+        align-items: baseline;
         .bot--left{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            margin-left: 5px;
-            .humidity{
-                font-size: 18px;
-                margin-bottom: 30px;
-            }
-            .wind{
-                font-size: 18px;
-            }
-        }
-        .bot--right{
+            flex-basis: 0;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-right: 10px;
+            margin-left: 5px;
+            .windIcon{
+                width: 50px;
+            }
+            .wind{
+                font-size: 16px;
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+        .bot--middle{
+            flex-basis: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             .weaIcon{
                 width: 100px;
             }
             .description{
                 margin-bottom: 20px;
+                text-align: center;
+                font-size: 20px;
+            }
+        }
+        .bot--right{
+            flex-basis: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 5px;
+            .humidityIcon{
+                width: 50px;
+            }
+            .humidity{
+                font-size: 16px;
+                text-align: center;
+                margin-top: 10px;
             }
         }
     }
@@ -92,6 +118,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 5vh;
     #search{
         border-style: none;
         background-color: rgba($color: $col_back, $alpha: 0.8);
@@ -99,6 +126,5 @@ footer{
         font-size: 24px;
         text-align: center;
         margin: 10px;
-        color: #d3d3d3;
     }
 }
