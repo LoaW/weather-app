@@ -1,8 +1,7 @@
 # weather-app
 
-[Preview](https://loaw.github.io/weather-app/) (**WiP: only mobile version avalaible**)
+<img src="./assets/img/WeatherApp_v2_mobile.png" alt="drawing" height="250px" style="float: right;"/>
 
-<img src="./assets/img/screenshot_app_v1.png" alt="drawing" width="250px" style="float: right;"/>
 
 ## Mission objectives
 
@@ -16,6 +15,8 @@ In this challenge you will use and consolidate your knowledge on:
 
 You have been sent abroad for a 10-month work mission. Your family and friends back home ask you about the weather where you live ALL. THE. TIME.  
 Enough is enough, you decide to build a small web application for them so that you can free your time to talk about more interesting topics.
+
+<img src="./assets/img/WeatherApp_v2_window.jpg" alt="drawing" height="250px" style="float: right;"/>
 
 ### Specifications
 

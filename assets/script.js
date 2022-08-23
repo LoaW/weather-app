@@ -102,7 +102,7 @@ function createElem(){
     htmlBotRight.appendChild(htmlHumidity)
 
     
-    let tryColor = `linear-gradient(0.25turn, ${hexToRGB(color, 1)}, ${hexToRGB(color, 0.8)}, ${hexToRGB(color, 1)})`
+    let tryColor = `linear-gradient(0.25turn, ${hexToRGB(color, 1)}, ${hexToRGB(color, 0.1)}, ${hexToRGB(color, 1)})`
 
     SwapColorFont(colorCheck)
     
