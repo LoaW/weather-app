@@ -34,29 +34,25 @@ main{
     .top{
         display: flex;
         justify-content: space-between;
-        width: 100vw;
-        overflow: hidden;
+        max-height: 200px;
         .top--left{
             .city{
                 font-size: 36px;
                 margin-left: 5px;
             }
             .temp{
-                mix-blend-mode: normal;
                 font-size: 96px;
                 margin-left: 5px;
             }
-        }
-        .top--right{
-            transform: rotate(-90deg);
-            display: flex;
-            justify-content: flex-start;
-            .weather{
+        } 
+        .weather{
             font-size: 36px;
-            margin-top: 100%;
-            }
-        }
-    }
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            margin-bottom: 4%;
+        } 
+    }   
+
     .bot{
         display: flex;
         justify-content: space-around;

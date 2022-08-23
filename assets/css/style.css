@@ -31,26 +31,22 @@ main {
 main .top {
   display: flex;
   justify-content: space-between;
-  width: 100vw;
-  overflow: hidden;
+  max-height: 200px;
 }
 main .top .top--left .city {
   font-size: 36px;
   margin-left: 5px;
 }
 main .top .top--left .temp {
-  mix-blend-mode: normal;
   font-size: 96px;
   margin-left: 5px;
 }
-main .top .top--right {
-  transform: rotate(-90deg);
-  display: flex;
-  justify-content: flex-start;
-}
-main .top .top--right .weather {
+main .top .weather {
   font-size: 36px;
-  margin-top: 100%;
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  margin-bottom: 4%;
 }
 main .bot {
   display: flex;

@@ -5,7 +5,6 @@ http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}
 let inputField = document.getElementById("search")
 let htmlHeader = document.querySelector("header")
 let htmlTopLeft = document.querySelector(".top--left")
-let htmlTopRight = document.querySelector(".top--right")
 let htmlFooter = document.querySelector("footer")
 let htmlCity = document.createElement("h3")
 let htmlTemp = document.createElement("div")
@@ -52,7 +51,6 @@ async function submit(){
 async function getWeather(){
     let weaRequest = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=1&units=metric&appid=8aecc0a6e3f1adb9b4ca9a87e4db5cb6`)
     let weaObject = await weaRequest.json()
-    console.log(weaObject)
     temperature = weaObject.list[0].main.temp
     weather = weaObject.list[0].weather[0].main
     weaIcon = weaObject.list[0].weather[0].icon
@@ -95,7 +93,7 @@ function createElem(){
 
     htmlTopLeft.appendChild(htmlCity)
     htmlTopLeft.appendChild(htmlTemp)
-    htmlTopRight.appendChild(htmlWeather)
+    document.querySelector(".top").appendChild(htmlWeather)
     htmlBotLeft.appendChild(htmlWindIcon)
     htmlBotLeft.appendChild(htmlWind)
     htmlBotMiddle.appendChild(htmlWeatherIcon)
@@ -105,9 +103,7 @@ function createElem(){
 
     
     let tryColor = `linear-gradient(0.25turn, ${hexToRGB(color, 1)}, ${hexToRGB(color, 0.8)}, ${hexToRGB(color, 1)})`
-    console.log(color)
-    console.log(hexToRGB(color,1))
-    console.log(colorCheck)
+
     SwapColorFont(colorCheck)
     
     document.querySelector(".top").style.background = tryColor
