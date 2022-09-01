@@ -41,7 +41,7 @@ inputField.addEventListener("keyup", function(event){
 
 async function submit(){
     inputField = document.getElementById("search").value
-    let cooRequest = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${inputField}&limit=1&appid=8aecc0a6e3f1adb9b4ca9a87e4db5cb6`)
+    let cooRequest = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${inputField}&limit=1&appid=8aecc0a6e3f1adb9b4ca9a87e4db5cb6`)
     let cooObject = await cooRequest.json()
     latitude = cooObject[0].lat
     longitude = cooObject[0].lon
@@ -49,7 +49,7 @@ async function submit(){
 }
 
 async function getWeather(){
-    let weaRequest = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=1&units=metric&appid=8aecc0a6e3f1adb9b4ca9a87e4db5cb6`)
+    let weaRequest = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=1&units=metric&appid=8aecc0a6e3f1adb9b4ca9a87e4db5cb6`)
     let weaObject = await weaRequest.json()
     temperature = weaObject.list[0].main.temp
     weather = weaObject.list[0].weather[0].main
@@ -84,7 +84,7 @@ function createElem(){
     htmlWindIcon.classList.add("windIcon")
     htmlWind.innerHTML = `${wind}m/s`
     htmlWind.classList.add("wind")
-    htmlWeatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${weaIcon}@2x.png`)
+    htmlWeatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weaIcon}@2x.png`)
     htmlWeatherIcon.classList.add("weaIcon")
     htmlDescription.innerHTML = description
     htmlDescription.classList.add("description")
